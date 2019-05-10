@@ -13,8 +13,8 @@ app.use(express.json());
 
 //Router-->showing the server where to go!
 //==============================
-require("/routing/apiRoutes")(app);
-require("/routing/htmlRoutes")(app);
+require("./app/routing/apiRoutes")(app);
+require("./app/routing/htmlRoutes")(app);
 
 //Listener-->Lets Get the Server Started in Here!
 //==============================

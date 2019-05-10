@@ -17,5 +17,10 @@
   "bugs": {
     "url": "https://github.com/Ches-CC/friendfinder/issues"
   },
-  "homepage": "https://github.com/Ches-CC/friendfinder#readme"
+  "homepage": "https://github.com/Ches-CC/friendfinder#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {}
 }
