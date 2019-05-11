@@ -20,7 +20,9 @@
   "homepage": "https://github.com/Ches-CC/friendfinder#readme",
   "dependencies": {
     "express": "^4.16.4",
-    "path": "^0.12.7"
+    "nodemon": "^1.19.0",
+    "path": "^0.12.7",
+    "require": "^2.4.20"
   },
   "devDependencies": {}
 }

@@ -1,31 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>F-FINDER</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-</head>
-<body>
-    <div class="jumbotron"><h1>About You!</h1></div>
-    <div>Q1</div>
-    <div>Q2</div>
-    <div>Q3</div>
-    <div>Q4</div>
-    <div>Q4</div>
-    <div>Q5</div>
-    <div>Q6</div>
-    <div>Q7</div>
-    <div>Q8</div>
-    <div>Q9</div>
-    <div>Q10</div>
-
-<script
-  src="http://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous">
-</script>
-<script src="survey.html"></script>
-</body>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="jumbotron">
+      <h1>Fill Out the Following Survey!</h1>
+      <h2>It's to make new friends!</h2>
+      <h3>NOT to Sell Your Personal Information! (probably)</h3>
+    </div>
+    <div class="container">
+      <!--NAME-->
+      <h4>Name (Required)</h4>
+      <input type="text" id="name" class="form-control" required />
+      <!--Photo Upload via URL-->
+      <h4>Link to Photo Image (Required)</h4>
+      <input type="text" id="photo" class="form-control" required />
+      <hr />
+      <hr />
+      <h2><strong>Question One</strong></h2>
+      <h2>You believe "Y'all" is a totally legitimate contraction.</h2>
+      <form>
+        <select name="question-one" id="q1" class="custom-select">
+          <option selected>Select One</option>
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+      </form>
+      <hr />
+      <h2><strong>Question Two</strong></h2>
+      <h2>You think sharting is no big deal, happens to the best of us.</h2>
+      <form>
+        <select name="question-two" id="q2" class="custom-select">
+          <option selected>Select One</option>
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+      </form>
+      <hr />
+      <h2><strong>Question Three</strong></h2>
+      <h2>
+        It's fine that Luke & Leia kissed because they didn't know they were
+        siblings.
+      </h2>
+      <form>
+        <select name="question-three" id="q3" class="custom-select">
+          <option selected>Select One</option>
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+      </form>
+      <hr />
+      <h2><strong>Question Four</strong></h2>
+      <h2>You're disgusted by the texture of the tapioca balls in boba tea.</h2>
+      <form>
+        <select name="question-four" id="q4" class="custom-select">
+          <option selected>Select One</option>
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+      </form>
+      <hr />
+      <h2><strong>Question Five</strong></h2>
+      <h2>Wearing all-black all-the-time is fine, right?</h2>
+      <form>
+        <select name="question-five" id="q5" class="custom-select">
+          <option selected>Select One</option>
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+      </form>
+      <hr />
+      <h2><strong>Question Six</strong></h2>
+      <h2>
+        Humans should be allowed to wear yoga pants anytime they feel like it.
+      </h2>
+      <form>
+        <select name="question-six" id="q6" class="custom-select">
+          <option selected>Select One</option>
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+      </form>
+      <hr />
+      <h2><strong>Question Seven</strong></h2>
+      <h2>Disc Golf is a game, not a sport.</h2>
+      <form>
+        <select name="question-seven" id="q7" class="custom-select">
+          <option selected>Select One</option>
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+      </form>
+      <hr />
+      <h2><strong>Question Eight</strong></h2>
+      <h2>Webbed fingers/toes are actually awesome.</h2>
+      <form>
+        <select name="question-eight" id="q8" class="custom-select">
+          <option selected>Select One</option>
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+      </form>
+      <hr />
+      <h2><strong>Question Nine</strong></h2>
+      <h2>Online Trolls should be punished IRL.</h2>
+      <form>
+        <select name="question-nine" id="q9" class="custom-select">
+          <option selected>Select One</option>
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+      </form>
+      <hr />
+      <h2><strong>Question Ten</strong></h2>
+      <h2>"Aliens" was better than "Alien".</h2>
+      <form>
+        <select name="question-ten" id="q10" class="custom-select">
+          <option selected>Select One</option>
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+      </form>
+      <br />
+      <button class="btn btn-primary btn-block" id="submit" type="submit">Submit</button>
+      <!-- <br />
+      <br />
+      <br />
+      <br />
+      <div>Q1: You believe "Y'all" is a totally legitimate contraction.</div>
+      <div>
+        Q2: You think sharting is no big deal, happens to the best of us.
+      </div>
+      <div>
+        Q3: It's fine that Luke & Leia kissed because they didn't know they were
+        siblings.
+      </div>
+      <div>
+        Q4: You're disgusted by the texture of the tapioca balls in boba tea.
+      </div>
+      <div>Q5: Wearing all-black all-the-time is fine, right?</div>
+      <div>
+        Q6: Humans should be allowed to wear yoga pants anytime they feel like
+        it.
+      </div>
+      <div>Q7: Disc Golf is a game, not a sport.</div>
+      <div>Q8: Webbed fingers/toes are actually awesome.</div>
+      <div>Q9: Online Trolls should be punished IRL</div>
+      <div>Q10: "Aliens" was better than "Alien"</div> -->
+    </div>
+    <script
+      src="http://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      $("#submit").on("click", function(event){
+        event.preventDefault();
+        var userData = {
+          name: $("#name").val(),
+          photo: $("#photo").val(),
+          scores: [
+            $("#q1").val(),
+            $("#q2").val(),
+            $("#q3").val(),
+            $("#q4").val(),
+            $("#q5").val(),
+            $("#q6").val(),
+            $("#q7").val(),
+            $("#q8").val(),
+            $("#q9").val(),
+            $("#q10").val()
+          ]
+        };
+        
+        $.post("/api/friends", userData, function(data){
+          console.log("User Data: " + userData);
+        });
+      });
+    
+    
+    </script>
+  </body>
 </html>

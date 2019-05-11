@@ -15,7 +15,7 @@ module.exports = function(app){
     });
 
     //Default
-    app.get("*", function(req, res){
-        res.sendFile(path.join(__dirname, "../home.html"));
+    app.get("/*", function(req, res){
+        res.sendFile(path.join(__dirname, "../public/home.html"));
     });
 };

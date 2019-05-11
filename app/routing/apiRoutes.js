@@ -20,11 +20,12 @@ module.exports = function(app){
     //API POST Requests!
     //Users POSTing/sending their data after some has been entered into the form
     // //use 
-    // console.log("New Friend: " + newfriend);
+    app.post("/api/friends", function(req, res){
 
-    // //Add the newest friend to the friendArray
-    // friendArray.push(newfriend);
+        //Add the newest friend to the friendArray
+        friendArray.push(req.body);
 
-    // //Display the JSON to the user(s)
-    // res.json(newfriend);
-}
+        //Display the JSON to the user(s)
+        res.json(true);
+    });
+};
