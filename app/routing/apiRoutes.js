@@ -2,8 +2,9 @@
 //==============================
 
 var app = require("express");
-var friendArray = require("../data/friends.js");
+var existingFriendArray = require("../data/friends.js");
 var path = require("path");
+var findMatch = require("../data/match.js");
 
 //Routing
 //==============================
@@ -13,17 +14,19 @@ module.exports = function(app){
     //First, to show a JSON of the data:
     let newfriend = "";
     app.get("/api/friends", function(req, res) {
-        res.json(friendArray);
+        res.json(existingFriendArray);
         newfriend = req.body;
     });
     
     //API POST Requests!
-    //Users POSTing/sending their data after some has been entered into the form
+    //Users POSTing/sending their data after survey is completed/submitted
     // //use 
     app.post("/api/friends", function(req, res){
-
+        let newfriend = req.body;
+        findMatch(newfriend);
+        // console.log("This is newfriend info: " + newfriend.name);
         //Add the newest friend to the friendArray
-        friendArray.push(req.body);
+        existingFriendArray.push(req.body);
 
         //Display the JSON to the user(s)
         res.json(true);

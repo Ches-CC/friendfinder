@@ -175,10 +175,35 @@
         </select>
       </form>
       <br />
-      <button class="btn btn-primary btn-block" id="submit" type="submit">
+      <button class="btn btn-primary btn-block" data-toggle="modal" id="submit" type="submit">
         Submit
       </button>
     </div>
+    <!--Modalo Especial-->
+    <div id="results-modal" class="modal-dialog fade" role="dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"></button>
+          <h2 class="modal-title">
+            <strong>Your New BFF!!</strong>
+          </h2>
+          <div class="modal-body">
+            <h2 id="match-name"></h2>
+            <img id="match-img" src="" alt>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div id="friend-match"></div>
+  
+</div>
+
+
+    <!--Las Scriptos de Java-->
     <script
       src="http://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -207,7 +232,7 @@
         }
         
         if (validateForm()) {
-        var userData = {
+          var userData = {
             name: $("#name").val(),
             photo: $("#photo").val(),
             scores: [
@@ -228,8 +253,12 @@
             console.log("User Data: " + userData);
           });
 
-
           //MODALO!
+          $("#friend-match").text("Hiiii");
+          $("#friend-img").text("src", "Hiiii");
+
+          $("#results-modal").show();
+
         }else{
           alert("Oops, looks like you forgot to answer a question! \nPlease go back and answer all questions!!");
         } 
