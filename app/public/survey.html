@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>F-FINDER</title>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </head>
   <body class="bg-secondary text-body">
     <div class="jumbotron text-center">
@@ -180,7 +178,7 @@
       </button>
     </div>
     <!--Modalo Especial-->
-    <div id="results-modal" class="modal-dialog fade" role="dialog">
+    <div id="results-modal" class="modal modal-dialog fade" role="dialog">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal"></button>
@@ -189,7 +187,7 @@
           </h2>
           <div class="modal-body">
             <h2 id="match-name"></h2>
-            <img id="match-img" src="" alt>
+            <img id="match-img" src="" alt="">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -203,15 +201,11 @@
 </div>
 
 
-    <!--Las Scriptos de Java-->
-    <script
-      src="http://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"
-    ></script>
-
-    <!--Capture User's Input-->
+  <!--Las Scriptos de Java-->
+  
+  <!--Capture User's Input-->
     <script type="text/javascript">
+    
       $("#submit").on("click", function(event) {
         event.preventDefault();
 
@@ -251,13 +245,15 @@
 
           $.post("/api/friends", userData, function(data) {
             console.log("User Data: " + userData);
+            console.log("Match Name: " + data.matchingName)
+            //MODALO!
+            $("#match-name").text(data.matchingName);
+            $("#match-img").attr("src", data.matchingPhoto);
+
+            $("#results-modal").modal("show");
           });
 
-          //MODALO!
-          $("#friend-match").text("Hiiii");
-          $("#friend-img").text("src", "Hiiii");
-
-          $("#results-modal").show();
+          
 
         }else{
           alert("Oops, looks like you forgot to answer a question! \nPlease go back and answer all questions!!");

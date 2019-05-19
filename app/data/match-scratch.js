@@ -1,3 +1,18 @@
+// console.log("New Score: " + newScore);
+// console.log("New Total: " + newTotal);
+
+// existingFriendArray.push(newfriend);
+
+// let diffScoreArray = [];
+
+// for (let i = 0; i < existingFriendArray.length; i++){
+//     let diffScore = newfriend.scores.reduce((accumulator, currentValue) => accumulator + currentValue) - existingFriendArray[i].scores.reduce((accumulator, currentValue) => accumulator + currentValue);
+//     diffScoreArray.push(Math.abs(diffScore));
+// };
+
+// console.log(Math.min.apply(null, diffScoreArray));
+
+//===================================================
 // let rawScore = [];
 //   let totalScore = 0;
 //   let scoreArray = [];

@@ -23,12 +23,37 @@ module.exports = function(app){
     // //use 
     app.post("/api/friends", function(req, res){
         let newfriend = req.body;
-        findMatch(newfriend);
+        // findMatch(newfriend);
         // console.log("This is newfriend info: " + newfriend.name);
         //Add the newest friend to the friendArray
-        existingFriendArray.push(req.body);
+        // existingFriendArray.push(newfriend);
 
         //Display the JSON to the user(s)
-        res.json(true);
+        // res.json(true);
+
+        let newFriendScore = parseInt(newfriend.scores);
+        let matchingName = "";
+        let matchingPhoto = "";
+
+        let totalDifference = 666;
+
+        for (let i = 0; i < existingFriendArray.length; i++){
+            let difference = 0
+            
+            for (let j = 0; j < newFriendScore.length; j++){
+                difference += Math.abs(existingFriendArray[i].scores[j]);
+            }
+
+            if (difference < totalDifference) {
+                totalDifference = difference;
+                matchingName = existingFriendArray[i].name;
+                matchingPhoto = existingFriendArray[i].photo;
+            }
+        };
+
+        res.json({newBFF: matchingName, selfie: matchingPhoto});
+        existingFriendArray.push(newfriend);
+
+
     });
 };
