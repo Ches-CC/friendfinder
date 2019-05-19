@@ -3,8 +3,8 @@
 
 let existingFriendArray = [
     {
-        "name": "Friend1",
-        "photo": "https://pbs.twimg.com/profile_images/511365720509546496/SBEOIXT__400x400.jpeg://xyz",
+        "name": "Esmerelda",
+        "photo": "https://cdn.pixabay.com/photo/2018/01/06/09/25/hijab-3064633_960_720.jpg",
         "scores": [
             1,
             2,
@@ -19,8 +19,8 @@ let existingFriendArray = [
         ]
     },
     {
-        "name": "Farfegnugen",
-        "photo": "https://via.placeholder.com/300",
+        "name": "Mister Farfegnugen",
+        "photo": "https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358_960_720.jpg",
         "scores": [
             5,
             5,

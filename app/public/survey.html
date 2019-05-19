@@ -173,30 +173,38 @@
         </select>
       </form>
       <br />
+       <!--Modalo Especial-->
+       <div class="modal fade" id="results-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Meet Your New BFF!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h2 id="match-name"></h2>
+              <img id="match-img" src="" style="width:200px; height:200ps;" alt="">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <h4>Refresh the Page to Start Again!</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    <br>
+    <div id="restart-survey" class="hidden text-center">
+      <!-- <button type="button" class="btn btn-secondary hidden" data-dismiss="modal" id="reset-form">Start the Survey Again!</button> -->
+      <p><h4>Refresh the Page to Start Again!</h4></p>
+    </div>
+    <div id="friend-match"></div>
       <button class="btn btn-primary btn-block" data-toggle="modal" id="submit" type="submit">
         Submit
       </button>
     </div>
-    <!--Modalo Especial-->
-    <div id="results-modal" class="modal modal-dialog fade" role="dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal"></button>
-          <h2 class="modal-title">
-            <strong>Your New BFF!!</strong>
-          </h2>
-          <div class="modal-body">
-            <h2 id="match-name"></h2>
-            <img id="match-img" src="" alt="">
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <br>
-    <div id="friend-match"></div>
+   
   
 </div>
 
@@ -205,7 +213,8 @@
   
   <!--Capture User's Input-->
     <script type="text/javascript">
-    
+      $("#restart-survey").hide();
+
       $("#submit").on("click", function(event) {
         event.preventDefault();
 
@@ -229,36 +238,50 @@
           var userData = {
             name: $("#name").val(),
             photo: $("#photo").val(),
-            scores: [
-              $("#q1").val(),
-              $("#q2").val(),
-              $("#q3").val(),
-              $("#q4").val(),
-              $("#q5").val(),
-              $("#q6").val(),
-              $("#q7").val(),
-              $("#q8").val(),
-              $("#q9").val(),
-              $("#q10").val()
-            ]
+            scores: []
           };
+          
+          let scoreArray = userData.scores;
+
+          scoreArray.push(parseInt($("#q1").val())),
+          scoreArray.push(parseInt($("#q2").val())),
+          scoreArray.push(parseInt($("#q3").val())),
+          scoreArray.push(parseInt($("#q4").val())),
+          scoreArray.push(parseInt($("#q5").val())),
+          scoreArray.push(parseInt($("#q6").val())),
+          scoreArray.push(parseInt($("#q7").val())),
+          scoreArray.push(parseInt($("#q8").val())),
+          scoreArray.push(parseInt($("#q9").val())),
+          scoreArray.push(parseInt($("#q10").val()))
+
+          console.log("Score Array: " + scoreArray);
 
           $.post("/api/friends", userData, function(data) {
-            console.log("User Data: " + userData);
             console.log("Match Name: " + data.matchingName)
-            //MODALO!
+
+            //MODAL? Barely knowal!
             $("#match-name").text(data.matchingName);
             $("#match-img").attr("src", data.matchingPhoto);
 
             $("#results-modal").modal("show");
           });
 
+          $("#restart-survey").show();
           
 
         }else{
           alert("Oops, looks like you forgot to answer a question! \nPlease go back and answer all questions!!");
         } 
       });
+      //Aborted attempt to get the button-clicks to reset the form...
+      // $("#reset-form").on("click", function(event) {
+      //   event.preventDefault();
+      //   $('form').val("selected");
+      // });
+      // $("#restart-survey").on("click", function(event) {
+      //   event.preventDefault();
+      //   $('form').val("selected");
+      // });
     </script>
   </body>
 </html>

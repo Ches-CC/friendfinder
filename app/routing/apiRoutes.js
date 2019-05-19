@@ -4,7 +4,6 @@
 var app = require("express");
 var existingFriendArray = require("../data/friends.js");
 var path = require("path");
-var findMatch = require("../data/match.js");
 
 //Routing
 //==============================
@@ -20,20 +19,13 @@ module.exports = function(app){
     
     //API POST Requests!
     //Users POSTing/sending their data after survey is completed/submitted
-    // //use 
     app.post("/api/friends", function(req, res){
-        let newfriend = req.body;
-        // findMatch(newfriend);
-        // console.log("This is newfriend info: " + newfriend.name);
-        //Add the newest friend to the friendArray
-        // existingFriendArray.push(newfriend);
-
-        //Display the JSON to the user(s)
-        // res.json(true);
-
-        let newFriendScore = parseInt(newfriend.scores);
+        let newfriend = req.body;       
+        let newFriendScore = (newfriend.scores);
         let matchingName = "";
         let matchingPhoto = "";
+
+        console.log("Newfriend scores: " + newfriend.scores)
 
         let totalDifference = 666;
 
@@ -50,8 +42,9 @@ module.exports = function(app){
                 matchingPhoto = existingFriendArray[i].photo;
             }
         };
+        console.log("NEW BFF: " + matchingName);
+        res.json({matchingName: matchingName, matchingPhoto: matchingPhoto});
 
-        res.json({newBFF: matchingName, selfie: matchingPhoto});
         existingFriendArray.push(newfriend);
 
 
